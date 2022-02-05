@@ -13,3 +13,7 @@ body {
 table {
   width: 100%;
 }
+
+.main-sidebar {
+  position: fixed !important;
+}

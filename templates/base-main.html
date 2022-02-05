@@ -6,9 +6,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="/static/css/fontawesome-free.all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+<link rel="stylesheet" href="/static/css/adminlte.min.css">
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <link rel="stylesheet" href="/static/css/OverlayScrollbars.min.css">
+<link rel="stylesheet" href="/static/css/style.css">
 
 {% endblock %}
 
@@ -142,25 +143,25 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="generate-plan" class="nav-link">
+                            <a href="/app/generate-plan" class="nav-link">
                                 <i class="far fa-calendar-plus nav-icon"></i>
                                 <p>Generate Plan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="plans-list" class="nav-link">
+                            <a href="/app/plans-list" class="nav-link">
                                 <i class="far fa-list-alt nav-icon"></i>
                                 <p>Plans List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="compare-plan" class="nav-link">
+                            <a href="/app/compare-plan" class="nav-link">
                                 <i class="far fa-balance-scale nav-icon"></i>
                                 <p>Compare Plan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="release-plan" class="nav-link">
+                            <a href="/app/release-plan" class="nav-link">
                                 <i class="far fa-paper-plane nav-icon"></i>
                                 <p>Release Plan</p>
                             </a>
@@ -235,17 +236,9 @@
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container-fluid">
-            {% block main-content %}{% endblock %}
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
     <!-- Main content -->
-    <section class="content">
-
+    <section>
+        {% block main-content %}{% endblock %}
     </section>
     <!-- /.content -->
 </div>
