@@ -14,9 +14,22 @@
 {% endblock %}
 
 
+
 {% block content %}
 
+<script src="/static/js/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="/static/js/jquery-ui.min.js"></script>
 
+<script src="/static/js/adminlte.min.js"></script>
+
+<!-- daterangepicker -->
+<script src="/static/js/moment.min.js"></script>
+<script src="/static/js/daterangepicker.js"></script>
+
+<!-- overlayScrollbars -->
+<script src="/static/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -115,18 +128,6 @@
             </div>
         </div>
 
-        <!-- SidebarSearch Form -->
-        <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -134,69 +135,26 @@
                with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-calendar-alt"></i>
+                    <a href="/app/generate-plan" class="nav-link">
+                        <i class="nav-icon fas fa-calendar-plus"></i>
                         <p>
-                            Planning
-                            <i class="fas fa-angle-left right"></i>
+                            Generate Plan
+
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/app/generate-plan" class="nav-link">
-                                <i class="far fa-calendar-plus nav-icon"></i>
-                                <p>Generate Plan</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/app/plans-list" class="nav-link">
-                                <i class="far fa-list-alt nav-icon"></i>
-                                <p>Plans List</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/app/compare-plan" class="nav-link">
-                                <i class="far fa-balance-scale nav-icon"></i>
-                                <p>Compare Plan</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/app/release-plan" class="nav-link">
-                                <i class="far fa-paper-plane nav-icon"></i>
-                                <p>Release Plan</p>
-                            </a>
-                        </li>
-                    </ul>
+
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-file-alt"></i>
+                    <a href="/app/plans-list" class="nav-link">
+                        <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
-                            Reporting
-                            <i class="fas fa-angle-left right"></i>
+                            Review Plans
+
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/tables/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Report 1</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/tables/data.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Report 2</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/tables/jsgrid.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Report 3</p>
-                            </a>
-                        </li>
-                    </ul>
+
                 </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user-cog"></i>
@@ -221,12 +179,21 @@
                         <li class="nav-item">
                             <a href="pages/tables/jsgrid.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Parameters</p>
+                                <p>Email Settings</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="/app/login" class="nav-link">
+                        <i class="nav-icon fas fa-calendar-alt"></i>
+                        <p>
+                            Sign out
 
+                        </p>
+                    </a>
+
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -257,22 +224,4 @@
 </aside>
 <!-- /.control-sidebar -->
 </div>
-{% endblock %}
-
-
-{% block scripts %}
-<script src="/static/js/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="/static/js/jquery-ui.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
-
-<!-- daterangepicker -->
-<script src="/static/js/moment.min.js"></script>
-<script src="/static/js/daterangepicker.js"></script>
-
-<!-- overlayScrollbars -->
-<script src="/static/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-
 {% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base-main.html" %}
+
+
+{% block main-content %}
+<div>
+    <h1 class="p-4 bg-blue-100">
+        Start Generating a Plan
+    </h1>
+</div>
+<div class="flex justify-around p-5">
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-img-top p-5 flex justify-center bg-red-100">
+            <img src="/static/img/plan_icon_128.png" alt="headcount planning">
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">Headcount planning</h5>
+            <p class="card-text">This description for headcount planning, This text should be customized</p>
+            <a href="generate/plan/headcount" class="btn btn-primary mt-4">Generate Headcount plan</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-img-top p-5 flex justify-center bg-blue-100">
+            <img src="/static/img/plan_icon_2_128.png" alt="headscenariocount planning">
+        </div>
+
+
+        <div class="card-body">
+            <h5 class="card-title">Scenario planning</h5>
+            <p class="card-text">This description for scenario planning, This text should be customized</p>
+            <a href="#" class="btn btn-primary mt-4">Generate Scenario Plan</a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

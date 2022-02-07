@@ -14,8 +14,8 @@ def generate_plan(request):
     return render(request, "generate-plan.html")
 
 
-def generate_headcount_plan(request):
-    return render(request, "generate-plans/headcount.html")
+def review_plan(request):
+    return render(request, "review-plan.html")
 
 
 def plans_list(request):

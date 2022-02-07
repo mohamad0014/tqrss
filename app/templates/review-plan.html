@@ -1,0 +1,128 @@
+{% extends "base-main.html" %}
+
+
+{% block main-content %}
+<div class="flex flex-col justify-around p-5">
+
+
+    <div class="card card-info">
+        <div class="card-header">
+            Review plan: <span class="badge badge-lg bg-success">Plan 2</span>
+        </div>
+        <div class="card-body">
+
+            <br />
+            <div class="row">
+                <!-- Plan Id -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Plan Id</span>
+                    </div>
+                    <input type="number" class="form-control" value="219" aria-label="Associates"
+                        aria-describedby="basic-addon1">
+                </div>
+
+                <!-- Plan Name -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Plan Name
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" value="Plan 2" aria-label="start date"
+                        aria-describedby="basic-addon1">
+                </div>
+                <!-- Planning Create Time -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Create Time
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" value="11/10/2021 13:30" aria-describedby="basic-addon1">
+                </div>
+                <!--Start Date -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Start Date
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" value="11/15/2021" aria-describedby="basic-addon1">
+                </div>
+                <!-- Planning horizo -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Planning horizon: </span>
+                    </div>
+                    <input type="number" class="form-control" value="26" aria-label="Planning horizo"
+                        aria-describedby="basic-addon1">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Weeks</span>
+                    </div>
+                </div>
+                <!-- User -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">User
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" value="Mui Lip" aria-label="start date"
+                        aria-describedby="basic-addon1">
+                </div>
+                <!-- Notes -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Notes
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" value="Original MPS and Calendar" aria-label="start date"
+                        aria-describedby="basic-addon1">
+                </div>
+
+                <!-- Warning -->
+                <div class="input-group mb-3 col-sm-12">
+                    <div class="input-group-prepend">
+
+                        <span class="input-group-text">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            Warnings
+                        </span>
+                    </div>
+                    <div class="form-control">
+                        <a href="#" role="button" class="btn btn-sm btn-warning">
+                            <span class="badge bg-secondary">4</span>
+                            View Warning File</a>
+                    </div>
+                </div>
+
+                <!-- Summery -->
+                <div class="input-group mb-3 col-sm-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            Summery&nbsp;&nbsp;&nbsp;
+                        </span>
+                    </div>
+                    <div class="form-control">
+                        <a href="#" role="button" class="btn btn-sm btn-primary">
+                            View Summery File</a>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <div class="input-group mb-3 col-sm-12">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-chart-bar mr-2"></i>
+                            Charts&nbsp;&nbsp;&nbsp;
+                        </span>
+                    </div>
+                    <div class="form-control">
+                        <a href="#" role="button" class="btn btn-sm btn-danger">
+                            View Charts </a>
+                    </div>
+                </div>
+
+                <a href="/app/plans-list" class="btn btn-primary" id="generate">Back </a>
+
+            </div>
+        </div>
+    </div>
+    {% endblock %}

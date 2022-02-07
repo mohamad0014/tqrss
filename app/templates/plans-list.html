@@ -2,5 +2,152 @@
 
 
 {% block main-content %}
-<h1> Plans List</h1>
+<div>
+    <h1 class="p-3 bg-blue-100">
+        Plans list
+    </h1>
+</div>
+<div class="flex flex-col justify-around p-5">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="dt-buttons btn-group flex-wrap">
+                        <button role="button" class="btn btn-secondary buttons-copy buttons-html5" tabindex="0"
+                            aria-controls="example1" type="button"><span>Compare</span>
+                        </button>
+                        <button class="btn btn-secondary buttons-csv" tabindex="0" aria-controls="example1"
+                            type="button"><span>Release</span>
+                        </button>
+                        <button class="btn btn-secondary buttons-excel " tabindex="0" aria-controls="example1"
+                            type="button"><span>Excel</span>
+                        </button>
+                        <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0"
+                            aria-controls="example1" type="button"><span>PDF</span>
+                        </button>
+                        <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1"
+                            type="button"><span>Email</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 dataTables_filter">
+                    <div class="card-tools row">
+                        <div class="input-group input-group-sm col-6" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control float-right"
+                                placeholder="Search">
+
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="input-group input-group-sm col-6" style="width: 150px;">
+                            <select class="form-control select2" style="width: 100%;">
+                                <option selected="selected">All</option>
+                                <option>Released</option>
+                                <option>Drafts</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Plan Name</th>
+                        <th>Create Time</th>
+                        <th>Start Date</th>
+                        <th>Horizon(Weeks)</th>
+                        <th>Status</th>
+                        <th>User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <a role="button" href="/app/review" class="btn btn-outline-info">
+                                <i class="fa fa-eye mr-2"></i>
+                                View
+                            </a>
+                            <button class="btn btn-outline-primary">
+                                <i class="fa fa-edit"></i>
+
+                            </button>
+                        </td>
+                        <td>183</td>
+                        <td>Plan 1</td>
+                        <td>11/22/2021 16:45</td>
+                        <td>11/29/2021</td>
+                        <td>13</td>
+                        <td><span class="badge bg-success">Released</span></td>
+                        <td>John Doe</td>
+                    </tr>
+                    <tr>
+                        <td> <a role="button" href="/app/review" class="btn btn-outline-info">
+                                <i class="fa fa-eye mr-2"></i>
+                                View
+                            </a>
+                            <button class="btn btn-outline-primary">
+                                <i class="fa fa-edit"></i>
+
+                            </button>
+                        </td>
+                        <td>219</td>
+                        <td>Plan 2</td>
+                        <td>11/10/2021 13:30 </td>
+                        <td>11/15/2021</td>
+                        <td>26</td>
+                        <td><span class="badge bg-warning">Draft</span></td>
+                        <td>Alexander Pierce</td>
+                    </tr>
+                    <tr>
+                        <td> <a role="button" href="/app/review" class="btn btn-outline-info">
+                                <i class="fa fa-eye mr-2"></i>
+                                View
+                            </a>
+                            <button class="btn btn-outline-primary">
+                                <i class="fa fa-edit"></i>
+
+                            </button>
+                        </td>
+                        <td>657</td>
+                        <td>Plan 3</td>
+                        <td>11/22/2021 16:45</td>
+                        <td>11/29/2021</td>
+                        <td>13</td>
+                        <td><span class="badge bg-success">Released</span></td>
+                        <td>Bob Doe</td>
+                    </tr>
+                    <tr>
+                        <td> <a role="button" href="/app/review" class="btn btn-outline-info">
+                                <i class="fa fa-eye mr-2"></i>
+                                View
+                            </a>
+                            <button class="btn btn-outline-primary">
+                                <i class="fa fa-edit"></i>
+
+                            </button>
+                        </td>
+                        <td>175</td>
+                        <td>Plan 4</td>
+                        <td>11/22/2021 16:45</td>
+                        <td>11/29/2021</td>
+                        <td>13</td>
+                        <td><span class="badge bg-success">Released</span></td>
+
+                        <td>Mike Doe</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+</div>
+<!-- /.card -->
 {% endblock %}
