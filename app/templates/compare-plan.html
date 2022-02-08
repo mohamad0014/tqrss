@@ -1,0 +1,55 @@
+{% extends "base-main.html" %}
+
+
+{% block main-content %}
+<div class="flex flex-col justify-around p-5">
+
+
+    <div class="card card-info">
+        <div class="card-header">
+            Compare Plans
+        </div>
+        <div class="card-body">
+
+            <br />
+            <table class="table table-hover text-nowrap rounded shadow">
+                <tr>
+                    <th class="bg-blue-500">
+                        Paramters
+                    </th>
+                    <th class="bg-blue-500">
+                        Plan |
+                    </th>
+                    <th class="bg-blue-500">
+                        Plan ||
+                    </th>
+                </tr>
+                <tr>
+                    <td>Plan Name
+                    </td>
+                    <td>Nov2Plan_1</td>
+                    <td>Nov2Plan_2</td>
+                </tr>
+                <tr>
+                    <td>Total overtime (in hrs)
+                    </td>
+                    <td>11.55</td>
+                    <td>12.5</td>
+                </tr>
+                <tr>
+                    <td>Total number of associates
+                    </td>
+                    <td>124</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <a href="#" role="button" class="btn btn-sm btn-danger">
+                            Compare Charts</a>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    {% endblock %}
