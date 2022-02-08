@@ -1,0 +1,73 @@
+{% extends "base-main.html" %}
+
+
+{% block main-content %}
+<div class="flex flex-col justify-around p-5">
+
+
+    <div class="card card-info">
+        <div class="card-header">
+            Create New User
+        </div>
+        <div class="card-body">
+
+            <br />
+            <div class="row">
+
+                <!-- Full Name -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Full Name
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="type full name" aria-label="start date"
+                        aria-describedby="basic-addon1">
+                </div>
+                <!-- Email -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Email
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="type email" aria-label="start date"
+                        aria-describedby="basic-addon1">
+                </div>
+                <!-- User Name -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">User Name
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="type user name" aria-label="start date"
+                        aria-describedby="basic-addon1">
+                </div>
+                <!-- Password -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Password
+                        </span>
+                    </div>
+                    <input type="password" class="form-control" placeholder="type password" aria-label="start date"
+                        aria-describedby="basic-addon1">
+                </div>
+                <!-- Retype Password -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Retype Password
+                        </span>
+                    </div>
+                    <input type="password" class="form-control" placeholder="retype password" aria-label="start date"
+                        aria-describedby="basic-addon1">
+                </div>
+
+
+
+
+
+            </div>
+            <a href="/user/list" class="btn btn-primary" id="generate">
+                <i class="fa fa-save mr-2"></i>
+                Create User</a>
+        </div>
+    </div>
+    {% endblock %}

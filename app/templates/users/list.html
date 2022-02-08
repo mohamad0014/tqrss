@@ -1,0 +1,132 @@
+{% extends "base-main.html" %}
+
+
+{% block main-content %}
+<div>
+    <h1 class="p-3 bg-blue-100">
+        Users list
+    </h1>
+</div>
+<div class="flex flex-col justify-around p-5">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <a role="button" href="/user/add" class="btn btn-primary">
+                        <i class="fa fa-plus mr-2"></i>
+                        Create new user
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-6 dataTables_filter">
+                    <div class="card-tools row">
+                        <div class="input-group input-group-sm col-6" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control float-right"
+                                placeholder="Search">
+
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="input-group input-group-sm col-6" style="width: 150px;">
+                            <select class="form-control select2" style="width: 100%;">
+                                <option selected="selected">All</option>
+                                <option>Admin</option>
+                                <option>Users</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Create Time</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a role="button" href="/review" class="btn btn-outline-danger ml-1">
+                                <i class="fa fa-trash "></i>
+                            </a>
+                            <button class="btn btn-outline-primary">
+                                <i class="fa fa-edit"></i>
+
+                            </button>
+                        </td>
+                        <td>100</td>
+                        <td>John Doe</td>
+                        <td>Administrator</td>
+                        <td>email@gmail.com</td>
+                        <td>11/10/2021 13:30 </td>
+                        <td><span class="badge bg-primary">Admin</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a role="button" href="/review" class="btn btn-outline-danger ml-1">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                            <button class="btn btn-outline-primary">
+                                <i class="fa fa-edit"></i>
+
+                            </button>
+                        </td>
+                        <td>101</td>
+                        <td>Alexander Pierce</td>
+                        <td>Administrator</td>
+                        <td>email@gmail.com</td>
+                        <td>11/10/2021 13:30 </td>
+                        <td><span class="badge bg-primary">Admin</span></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <a role="button" href="/review" class="btn btn-outline-danger ml-1">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                            <button class="btn btn-outline-primary">
+                                <i class="fa fa-edit"></i>
+
+                            </button>
+                        </td>
+                        <td>103</td>
+                        <td>Bob Doe</td>
+                        <td>Administrator</td>
+                        <td>email@gmail.com</td>
+                        <td>11/10/2021 13:30 </td>
+                        <td><span class="badge bg-warning">User</span></td>
+
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+</div>
+
+
+<script>
+
+    $(document).ready(function () {
+        $("#btn_compare").click(function () {
+            console.log("btn_compare clicked!")
+            //$(".checkbox").toggle();
+        });
+    });
+</script>
+<!-- /.card -->
+{% endblock %}

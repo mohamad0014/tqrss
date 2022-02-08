@@ -17,3 +17,7 @@ table {
 .main-sidebar {
   position: fixed !important;
 }
+
+.btn-group .btn-secondary{
+  background-color: #6c757d !important;
+}

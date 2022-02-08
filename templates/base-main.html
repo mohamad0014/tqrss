@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <link rel="stylesheet" href="/static/css/OverlayScrollbars.min.css">
 <link rel="stylesheet" href="/static/css/style.css">
-
+<link rel="stylesheet" href="/static/css/select2.min.css">
+<link rel="stylesheet" href="/static/css/select2-bootstrap4.min.css">
 {% endblock %}
 
 
@@ -18,17 +19,13 @@
 {% block content %}
 
 <script src="/static/js/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
 <script src="/static/js/jquery-ui.min.js"></script>
-
 <script src="/static/js/adminlte.min.js"></script>
-
-<!-- daterangepicker -->
 <script src="/static/js/moment.min.js"></script>
 <script src="/static/js/daterangepicker.js"></script>
-
-<!-- overlayScrollbars -->
 <script src="/static/js/jquery.overlayScrollbars.min.js"></script>
+<script src="/static/js/select2.full.min.js"></script>
+
 <!-- AdminLTE App -->
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -135,7 +132,7 @@
                with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                    <a href="/app/generate-plan" class="nav-link">
+                    <a href="/generate-plan" class="nav-link">
                         <i class="nav-icon fas fa-calendar-plus"></i>
                         <p>
                             Generate Plan
@@ -145,7 +142,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a href="/app/plans-list" class="nav-link">
+                    <a href="/plans-list" class="nav-link">
                         <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             Review Plans
@@ -165,19 +162,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/tables/simple.html" class="nav-link">
+                            <a href="/user/list" class="nav-link">
                                 <i class="far fa-user-plus nav-icon"></i>
                                 <p>User Management</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/data.html" class="nav-link">
+                            <a href="/database" class="nav-link">
                                 <i class="far fa-database nav-icon"></i>
                                 <p>Database Settings</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/jsgrid.html" class="nav-link">
+                            <a href="/emails" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Email Settings</p>
                             </a>
@@ -185,7 +182,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="/app/login" class="nav-link">
+                    <a href="/logout" class="nav-link">
                         <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             Sign out

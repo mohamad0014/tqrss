@@ -12,13 +12,13 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
-                    <div class="dt-buttons btn-group flex-wrap">
-                        <button role="button" class="btn btn-secondary buttons-copy buttons-html5" tabindex="0"
-                            aria-controls="example1" type="button"><span>Compare</span>
-                        </button>
-                        <button class="btn btn-secondary buttons-csv" tabindex="0" aria-controls="example1"
+                    <div class="btn-buttons btn-group flex-wrap">
+                        <a id="btn_compare" role="button" class="btn btn-secondary buttons-copy buttons-html5"
+                            tabindex="0" aria-controls="example1" type="button"><span>Compare</span>
+                        </a>
+                        <a class="btn btn-secondary buttons-csv" tabindex="0" aria-controls="example1"
                             type="button"><span>Release</span>
-                        </button>
+                        </a>
                         <button class="btn btn-secondary buttons-excel " tabindex="0" aria-controls="example1"
                             type="button"><span>Excel</span>
                         </button>
@@ -71,7 +71,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td> <a role="button" href="/app/review" class="btn btn-outline-info">
+                        <td>
+                            <input type="checkbox" class="form-check-input checkbox  mt-2" id="exampleCheck1">
+                            <a role="button" href="/review" class="btn btn-outline-info ml-1">
                                 <i class="fa fa-eye mr-2"></i>
                                 View
                             </a>
@@ -89,7 +91,9 @@
                         <td>John Doe</td>
                     </tr>
                     <tr>
-                        <td> <a role="button" href="/app/review" class="btn btn-outline-info">
+                        <td>
+                            <input type="checkbox" class="form-check-input checkbox " id="exampleCheck1">
+                            <a role="button" href="/review" class="btn btn-outline-info">
                                 <i class="fa fa-eye mr-2"></i>
                                 View
                             </a>
@@ -107,7 +111,9 @@
                         <td>Alexander Pierce</td>
                     </tr>
                     <tr>
-                        <td> <a role="button" href="/app/review" class="btn btn-outline-info">
+                        <td>
+                            <input type="checkbox" class="form-check-input checkbox " id="exampleCheck1">
+                            <a role="button" href="/review" class="btn btn-outline-info">
                                 <i class="fa fa-eye mr-2"></i>
                                 View
                             </a>
@@ -125,7 +131,9 @@
                         <td>Bob Doe</td>
                     </tr>
                     <tr>
-                        <td> <a role="button" href="/app/review" class="btn btn-outline-info">
+                        <td>
+                            <input type="checkbox" class="form-check-input checkbox " id="exampleCheck1">
+                            <a role="button" href="/review" class="btn btn-outline-info">
                                 <i class="fa fa-eye mr-2"></i>
                                 View
                             </a>
@@ -149,5 +157,16 @@
         <!-- /.card-body -->
     </div>
 </div>
+
+
+<script>
+
+    $(document).ready(function () {
+        $("#btn_compare").click(function () {
+            console.log("btn_compare clicked!")
+            //$(".checkbox").toggle();
+        });
+    });
+</script>
 <!-- /.card -->
 {% endblock %}
