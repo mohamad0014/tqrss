@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
+    if not request.user.is_authenticated:
+        return redirect('/login')
     return render(request, "main.html")
 
 
@@ -32,22 +34,32 @@ def loginPage(request):
 
 
 def generate_plan(request):
+    if not request.user.is_authenticated:
+        return redirect('/login')
     return render(request, "generate-plan.html")
 
 
 def review_plan(request):
+    if not request.user.is_authenticated:
+        return redirect('/login')
     return render(request, "review-plan.html")
 
 
 def plans_list(request):
+    if not request.user.is_authenticated:
+        return redirect('/login')
     return render(request, "plans-list.html")
 
 
 def compare_plan(request):
+    if not request.user.is_authenticated:
+        return redirect('/login')
     return render(request, "compare-plan.html")
 
 
 def release_plan(request):
+    if not request.user.is_authenticated:
+        return redirect('/login')
     return render(request, "release-plan.html")
 
 
@@ -57,8 +69,12 @@ def logoutUser(request):
 
 
 def user_list(request):
+    if not request.user.is_authenticated:
+        return redirect('/login')
     return render(request, "users/list.html")
 
 
 def add_user(request):
+    if not request.user.is_authenticated:
+        return redirect('/login')
     return render(request, "users/add.html")
