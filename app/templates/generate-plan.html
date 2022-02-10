@@ -22,9 +22,33 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Max # of Associates per cell</span>
                     </div>
-                    <input type="number" class="form-control" placeholder="Type a number greater than 0"
+                    <input type="number" value="8" class="form-control" placeholder="Type a number greater than 0"
                         aria-label="Associates" aria-describedby="basic-addon1">
                 </div>
+
+                <!-- Shift length -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Shift length: </span>
+                    </div>
+                    <input type="number" class="form-control" value="8" placeholder="Type a number between 0 to 24"
+                        aria-label="Planning horizo" aria-describedby="basic-addon1">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Hours</span>
+                    </div>
+                </div>
+                <!-- TimeUnit -->
+                <div class="form-group  mb-3 col-sm-6">
+
+                    <label>Time unit</label>
+                    <select class="form-control">
+                        <option value="1">Minutes</option>
+                        <option value="2" selected>Seconds</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="row">
                 <!-- Plan start date -->
                 <div class="input-group mb-3 col-sm-6">
                     <div class="input-group-prepend">
@@ -43,27 +67,6 @@
                     <div class="input-group-append">
                         <span class="input-group-text">Weeks</span>
                     </div>
-                </div>
-                <!-- Planning horizo -->
-                <div class="input-group mb-3 col-sm-6">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Shift length: </span>
-                    </div>
-                    <input type="number" class="form-control" placeholder="Type a number between 0 to 24"
-                        aria-label="Planning horizo" aria-describedby="basic-addon1">
-                    <div class="input-group-append">
-                        <span class="input-group-text">Hours</span>
-                    </div>
-                </div>
-                <!-- Plan start date -->
-                <div class="form-group  mb-3 col-sm-6">
-
-                    <label>Time unit</label>
-                    <select class="form-control">
-                        <option selected>--- Select time unit ---</option>
-                        <option value="1">Minutes</option>
-                        <option value="2">Seconds</option>
-                    </select>
                 </div>
             </div>
             <div class="form-group mb-3 col-sm-6">
