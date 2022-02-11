@@ -9,95 +9,146 @@
 </div>
 <div class="flex flex-col justify-around p-5">
 
+
+
     <div class="card card-info">
         <div class="card-header">
             Plan paramters
         </div>
         <div class="card-body">
-            <p class="card-text">Pleas fill out required paramters.</p>
-            <br />
-            <div class="row">
-                <!-- Associates per cell -->
-                <div class="input-group mb-3 col-sm-6">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Max # of Associates per cell</span>
+            <form id="plan-input" method="post" class="needs-validation">
+                {% csrf_token %}
+                <p class="card-text">Pleas fill out required paramters.</p>
+                <br />
+                <div class="row">
+                    <!-- Associates per cell -->
+                    <div class="input-group mb-3 col-sm-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Max # of Associates per cell</span>
+                        </div>
+                        <input type="number" value="8" class="form-control required"
+                            placeholder="Type a number greater than 0" aria-label="Associates"
+                            aria-describedby="basic-addon1" required>
                     </div>
-                    <input type="number" value="8" class="form-control" placeholder="Type a number greater than 0"
-                        aria-label="Associates" aria-describedby="basic-addon1">
-                </div>
 
-                <!-- Shift length -->
-                <div class="input-group mb-3 col-sm-6">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Shift length: </span>
+                    <!-- Shift length -->
+                    <div class="input-group mb-3 col-sm-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Shift length: </span>
+                        </div>
+                        <input type="number" class="form-control" value="8" placeholder="Type a number between 0 to 24"
+                            aria-label="Planning horizo" aria-describedby="basic-addon1" required>
+                        <div class="input-group-append">
+                            <span class="input-group-text">Hours</span>
+                        </div>
                     </div>
-                    <input type="number" class="form-control" value="8" placeholder="Type a number between 0 to 24"
-                        aria-label="Planning horizo" aria-describedby="basic-addon1">
-                    <div class="input-group-append">
-                        <span class="input-group-text">Hours</span>
-                    </div>
-                </div>
-                <!-- TimeUnit -->
-                <div class="form-group  mb-3 col-sm-6">
+                    <!-- TimeUnit -->
+                    <div class="form-group  mb-3 col-sm-6">
 
-                    <label>Time unit</label>
-                    <select class="form-control">
-                        <option value="1">Minutes</option>
-                        <option value="2" selected>Seconds</option>
-                    </select>
-                </div>
+                        <label>Time unit</label>
+                        <select class="form-control">
+                            <option value="1">Minutes</option>
+                            <option value="2" selected>Seconds</option>
+                        </select>
+                    </div>
 
-            </div>
-            <div class="row">
-                <!-- Plan start date -->
-                <div class="input-group mb-3 col-sm-6">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Plan start date</span>
-                    </div>
-                    <input type="date" class="form-control" placeholder="Enter start date" aria-label="start date"
-                        aria-describedby="basic-addon1">
                 </div>
-                <!-- Planning horizo -->
-                <div class="input-group mb-3 col-sm-6">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Planning horizon: </span>
+                <div class="row">
+                    <!-- Plan start date -->
+                    <div class="input-group mb-3 col-sm-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Plan start date</span>
+                        </div>
+                        <input type="date" class="form-control" placeholder="Enter start date" aria-label="start date"
+                            aria-describedby="basic-addon1" required>
                     </div>
-                    <input type="number" class="form-control" placeholder="Type a number greater than 0"
-                        aria-label="Planning horizo" aria-describedby="basic-addon1">
-                    <div class="input-group-append">
-                        <span class="input-group-text">Weeks</span>
+                    <!-- Planning horizon -->
+                    <div class="input-group mb-3 col-sm-6">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Planning horizon: </span>
+                        </div>
+                        <input type="number" class="form-control required" id="horizon" name="horizon" required
+                            placeholder="Type a number greater than 0" aria-label="Planning horizo" value="{{Horizon}}"
+                            aria-describedby="basic-addon1">
+                        <div class="input-group-append">
+                            <span class="input-group-text">Weeks</span>
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a horizon
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group mb-3 col-sm-6">
-                <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="chk_scenario">
-                    <label class="custom-control-label" for="chk_scenario">Create a scenario</label>
+                <div class="form-group mb-3 col-sm-6">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="chk_scenario">
+                        <label class="custom-control-label" for="chk_scenario">Create a scenario</label>
+                    </div>
                 </div>
-            </div>
-            <a href="#" class="btn btn-primary" id="generate">Generate </a>
-
+                <a href="#" class="btn btn-primary" id="generate">
+                    <input type="submit" value="Generate">
+                </a>
+            </form>
         </div>
     </div>
     <div id="scenario" class="hidden">
         {% include "generate-plans/scenario.html" %}
     </div>
     <div id="result" class="hidden">
+        {% if generating %}
         {% include "generate-plans/result.html" %}
+        {% endif %}
     </div>
 
-
 </div>
+
+
 
 <script>
 
     $(document).ready(function () {
-        $("#generate").click(function () {
-            $("#result").show();
-        });
         $('#chk_scenario').on('change', function () { // on change of state
             $("#scenario").toggle();
         })
     });
+
+    function simulate_generation() {
+        console.log("Simulate generation");
+        $("#result").show();
+        var counter = 1.0;
+        var horizon = $("#horizon").val();
+        console.log("horizon " + horizon);
+        var timer = setInterval(function () {
+            var template = $('#generated-item').html();
+            template = template.replace("{week_no}", counter);
+
+            $('#progress-items').append(template);
+            var valeur = counter / horizon * 100;
+            $('#plan-progress').css('width', valeur + '%').attr('aria-valuenow', valeur);
+            counter++;
+
+            if (counter > horizon) {
+                clearInterval(timer);
+                $("#generation-finished").show();
+                $("#save-result").show();
+            }
+
+        }, 1000);
+    }
 </script>
+
+{% if generating %}
+<script>
+
+    console.log("Generating Plan..")
+    $(document).ready(function () {
+        simulate_generation()
+    });
+</script>
+{% else %}
+<script>
+    console.log("Not Generating Plan..")
+
+</script>
+{% endif %}
+
 {% endblock %}

@@ -36,7 +36,10 @@ def loginPage(request):
 def generate_plan(request):
     if not request.user.is_authenticated:
         return redirect('/login')
-    return render(request, "generate-plan.html")
+    if request.method == 'POST':
+        return render(request, "generate-plan.html", {'generating': True, 'Horizon': request.POST.get('horizon', '')})
+    else:
+        return render(request, "generate-plan.html", {'generating': False})
 
 
 def review_plan(request):
