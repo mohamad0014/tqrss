@@ -9,28 +9,73 @@
         <div class="card-header">
             Create New User
         </div>
-        <div class="card-body">
+        {% if newuser %}
+        <div class="alert alert-success" role="alert">
+            <i class="far fa-check-circle fa-3x mr-2 text-green-500"></i>
+            User is created successfully
 
+            <a class="float-right" role="button" href="/user/list" class="btn btn-light">
+                <i class="fa fa-arrow-left mr-2"></i>
+                Back to user list
+            </a>
+        </div>
+        {% endif %}
+
+
+        <form class="card-body" method="POST" action="">
+
+
+            {% csrf_token %}
             <br />
             <div class="row">
 
-                <!-- Full Name -->
+                <!-- First name -->
                 <div class="input-group mb-3 col-sm-6">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Full Name
+                        <span class="input-group-text">First name
                         </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="type full name" aria-label="start date"
-                        aria-describedby="basic-addon1">
+                    <input type="text" name="first_name" id="first_name"
+                        value="{{form.first_name.value|default_if_none:""}}"
+                        class="form-control {% if form.first_name.errors %} is-invalid{% endif %}"
+                        placeholder="type first name" aria-label="start date" aria-describedby="basic-addon1">
+                    {% if form.first_name.errors %}
+                    <span id="first_name-error" class="error invalid-feedback">Please
+                        {{form.first_name.errors}}
+                    </span>
+                    {% endif %}
                 </div>
+                <!-- Last name -->
+                <div class="input-group mb-3 col-sm-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> Last name
+                        </span>
+                    </div>
+                    <input type="text" name="last_name" id="last_name"
+                        value="{{form.last_name.value|default_if_none:""}}"
+                        class="form-control {% if form.last_name.errors %} is-invalid{% endif %}"
+                        placeholder="type last name" aria-label="start date" aria-describedby="basic-addon1">
+                    {% if form.last_name.errors %}
+                    <span id="last_name-error" class="error invalid-feedback">
+                        {{ form.last_name.errors }}
+                    </span>
+                    {% endif %}
+                </div>
+
                 <!-- Email -->
                 <div class="input-group mb-3 col-sm-6">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Email
                         </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="type email" aria-label="start date"
-                        aria-describedby="basic-addon1">
+                    <input type="text" name="email" id="email" value="{{form.email.value|default_if_none:""}}"
+                        class="form-control {% if form.email.errors %} is-invalid{% endif %}" placeholder="type email"
+                        aria-label="start date" aria-describedby="basic-addon1">
+                    {% if form.email.errors %}
+                    <span id="email-error" class="error invalid-feedback">
+                        {{ form.email.errors }}
+                    </span>
+                    {% endif %}
                 </div>
                 <!-- User Name -->
                 <div class="input-group mb-3 col-sm-6">
@@ -38,8 +83,14 @@
                         <span class="input-group-text">User Name
                         </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="type user name" aria-label="start date"
-                        aria-describedby="basic-addon1">
+                    <input type="text" name="username" id="username" value="{{form.username.value|default_if_none:""}}"
+                        class="form-control {% if form.username.errors %} is-invalid{% endif %}"
+                        placeholder="type user name" aria-label="start date" aria-describedby="basic-addon1">
+                    {% if form.username.errors %}
+                    <span id="username-error" class="error invalid-feedback">
+                        {{ form.username.errors }}
+                    </span>
+                    {% endif %}
                 </div>
                 <!-- Password -->
                 <div class="input-group mb-3 col-sm-6">
@@ -47,8 +98,15 @@
                         <span class="input-group-text">Password
                         </span>
                     </div>
-                    <input type="password" class="form-control" placeholder="type password" aria-label="start date"
-                        aria-describedby="basic-addon1">
+                    <input type="password" name="password1" id="password1"
+                        value="{{form.password1.value|default_if_none:""}}"
+                        class="form-control {% if form.password1.errors %} is-invalid{% endif %}"
+                        placeholder="type password" aria-label="start date" aria-describedby="basic-addon1">
+                    {% if form.password1.errors %}
+                    <span id="password1-error" class="error invalid-feedback">
+                        {{ form.password1.errors }}
+                    </span>
+                    {% endif %}
                 </div>
                 <!-- Retype Password -->
                 <div class="input-group mb-3 col-sm-6">
@@ -56,18 +114,22 @@
                         <span class="input-group-text">Retype Password
                         </span>
                     </div>
-                    <input type="password" class="form-control" placeholder="retype password" aria-label="start date"
-                        aria-describedby="basic-addon1">
+                    <input type="password" name="password2" id="password2"
+                        value="{{form.password2.value|default_if_none:""}}"
+                        class="form-control {% if form.password2.errors %} is-invalid{% endif %}"
+                        placeholder="retype password" aria-label="start date" aria-describedby="basic-addon1">
+                    {% if form.password2.errors %}
+                    <span id="password2-error" class="error invalid-feedback">
+                        {{ form.password2.errors }}
+                    </span>
+                    {% endif %}
                 </div>
 
-
-
-
-
             </div>
-            <a href="/user/list" class="btn btn-primary" id="generate">
+            <a class="btn btn-primary" id="generate" role="button">
                 <i class="fa fa-save mr-2"></i>
-                Create User</a>
-        </div>
+                <input type="submit" value="Create User">
+            </a>
+        </form>
     </div>
     {% endblock %}

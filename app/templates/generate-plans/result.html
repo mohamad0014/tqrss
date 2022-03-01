@@ -34,7 +34,7 @@
         </li> -->
 
     </ul>
-    <div class="card-body hidden" id="generation-finished">
+    <div class="card-body hidden" id="generation-successfull">
         <div class="flex flex-column items-center mb-3 ">
             <hr />
             <i class="far fa-check-circle fa-3x mr-2 text-green-500"></i>
@@ -43,10 +43,27 @@
         </div>
         <div class="alert alert-warning" role="alert">
             There are
-            <span class="badge bg-secondary">132</span>
-            errors, Please check the <a href="#">Warning file</a>
+            <span class="badge bg-secondary" id="warning-count">10</span>
+            warining, Please check the <a href="#">Warning file</a>
         </div>
 
+    </div>
+    <div class="card-body hidden" id="generation-failed">
+        <div class="flex flex-column items-center mb-3 ">
+            <hr />
+            <i class="fas fa-exclamation-triangle  fa-3x mr-2 text-red-500"></i>
+
+            <h1>Plan generation Failed</h1>
+        </div>
+        <div class="alert alert-warning" role="alert">
+            There are
+            <span class="badge bg-secondary" id="errors-count">5</span>
+            errors, Please check following message:
+        </div>
+
+        <div class="alert alert-danger hidden" role="alert" id="errors">
+
+        </div>
     </div>
     <div class="card-footer hidden" id="save-result">
         <form action="#" method="post">

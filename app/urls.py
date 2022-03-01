@@ -10,6 +10,8 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     path('generate-plan/', views.generate_plan, name='generate-plan'),
+    path('generate-status/', views.generate_plan_status,
+         name='generate-pstatuslan'),
     path('review/', views.review_plan, name='review_plan'),
     path('plans-list/', views.plans_list, name='plans-list'),
     path('compare-plan/', views.compare_plan, name='compare-plan'),

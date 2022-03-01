@@ -128,8 +128,21 @@
 
             if (counter > horizon) {
                 clearInterval(timer);
-                $("#generation-finished").show();
-                $("#save-result").show();
+                $.get("/generate-status", function (data, status) {
+                    console.log(data);
+                    alert("Data: " + data + "\nStatus: " + status);
+                    if (data.errors.length == 0) {
+                        $("#generation-finished").show();
+                        $("#save-result").show();
+                    }
+                    else {
+                        $("#generation-failed").show();
+                        $("#errors-count").text(data.errors.length);
+                        $("#errors").show();
+                        $("#errors").text(data.errors);
+                    }
+                });
+
             }
 
         }, 1000);
