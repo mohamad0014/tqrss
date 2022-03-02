@@ -58,7 +58,7 @@ def generate_plan(request):
         df.at[13, 'value'] = request.POST.get('horizon')
 
         
-        df.to_csv('user_input.csv')
+        df.to_csv('../data/Input_Data/user_input.csv')
         t = threading.Thread(target=generate, args=(), kwargs={})
         t.setDaemon(True)
         t.start()
