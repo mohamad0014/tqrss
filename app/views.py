@@ -55,10 +55,18 @@ def generate_plan(request):
 def generate_plan_status(request):
     if not request.user.is_authenticated:
         return redirect('/login')
+    errors = []
+    warnings = []
+
     if(path.exists('logs/Error_log.txt')):
         with open('logs/Error_log.txt') as f:
             errors = f.readlines()
-        return JsonResponse({'errors': errors})
+
+    if(path.exists('logs/warning_log.txt')):
+        with open('logs/warning_log.txt') as f:
+            warnings = f.readlines()
+
+    return JsonResponse({'errors': errors, 'warnings': warnings})
 
 
 def review_plan(request):

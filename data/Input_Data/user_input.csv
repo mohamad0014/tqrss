@@ -1,4 +1,4 @@
-﻿parameter,value,comments
+parameter,value,comments
 max_associations sub cell,7,
 max_associations finish cell,6,
 start_date,9/6/2021,
@@ -12,3 +12,4 @@ skip_line engg std finish cell,8,
 Factored engg std finish cell column numbers,29,
 skip_line engg std sub cell,8,
 Factored engg std sub cell column numbers,29,
+number of weeks,17,

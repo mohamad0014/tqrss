@@ -130,10 +130,14 @@
                 clearInterval(timer);
                 $.get("/generate-status", function (data, status) {
                     console.log(data);
-                    alert("Data: " + data + "\nStatus: " + status);
                     if (data.errors.length == 0) {
-                        $("#generation-finished").show();
+                        $("#generation-successfull").show();
                         $("#save-result").show();
+                        if (data.warnings.length > 0) {
+                            $("#warning-count").text(data.warnings.length);
+                            $("#warnings").show();
+                            $("#warning-content").text(data.warnings);
+                        }
                     }
                     else {
                         $("#generation-failed").show();
