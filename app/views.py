@@ -42,14 +42,38 @@ def loginPage(request):
 def generate_plan(request):
     if not request.user.is_authenticated:
         return redirect('/login')
+    filename = './data/Input_Data/user_input.csv'
+    df = pd.read_csv(filename, encoding="ISO-8859-1")
+    print(df)
     if request.method == 'POST':
         print('generating plan...')
+        date1 = request.POST.get('start_date')
+        date1 = datetime.strptime(date1, '%Y-%m-%d').strftime("%m/%d/%Y")
+        print(date1)
+        df.at[0, 'value'] = request.POST.get('max-associates')
+        df.at[1, 'value'] = request.POST.get('max-associates')
+        df.at[4, 'value'] = request.POST.get('shifthour')
+        df.at[7, 'value'] = request.POST.get('unit')
+        df.at[2, 'value'] = date1
+        df.at[13, 'value'] = request.POST.get('horizon')
+
+        with open(filename, 'w') as f:
+            df.to_csv(f, header=f.tell() == 0)
         t = threading.Thread(target=generate, args=(), kwargs={})
         t.setDaemon(True)
         t.start()
         return render(request, "generate-plan.html", {'generating': True, 'Horizon': request.POST.get('horizon', '')})
     else:
-        return render(request, "generate-plan.html", {'generating': False})
+        context = {
+            'generating': False,
+            'max_associates': df.at[1, 'value'],
+            'shifthour': df.at[4, 'value'],
+            'unit': df.at[7, 'value'],
+            'start_date': df.at[2, 'value'],
+            'horizon': df.at[13, 'value']
+        }
+
+        return render(request, "generate-plan.html", context)
 
 
 def generate_plan_status(request):

@@ -26,9 +26,9 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Max # of Associates per cell</span>
                         </div>
-                        <input type="number" value="8" class="form-control required"
-                            placeholder="Type a number greater than 0" aria-label="Associates"
-                            aria-describedby="basic-addon1" required>
+                        <input type="number" name="max-associates" id="max-associates" value="{{max_associates}}"
+                            class="form-control required" placeholder="Type a number greater than 0"
+                            aria-label="Associates" aria-describedby="basic-addon1" required>
                     </div>
 
                     <!-- Shift length -->
@@ -36,8 +36,9 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Shift length: </span>
                         </div>
-                        <input type="number" class="form-control" value="8" placeholder="Type a number between 0 to 24"
-                            aria-label="Planning horizo" aria-describedby="basic-addon1" required>
+                        <input type="number" name="shifthour" id="shifthour" class="form-control" value="{{shifthour}}"
+                            placeholder="Type a number between 0 to 24" aria-label="Planning horizo" min="0" max="24"
+                            aria-describedby="basic-addon1" required>
                         <div class="input-group-append">
                             <span class="input-group-text">Hours</span>
                         </div>
@@ -46,9 +47,9 @@
                     <div class="form-group  mb-3 col-sm-6">
 
                         <label>Time unit</label>
-                        <select class="form-control">
-                            <option value="1">Minutes</option>
-                            <option value="2" selected>Seconds</option>
+                        <select class="form-control" name="unit" id="unit" value="{{unit}}">
+                            <option value="minute">Minutes</option>
+                            <option value="second" selected>Seconds</option>
                         </select>
                     </div>
 
@@ -59,8 +60,9 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Plan start date</span>
                         </div>
-                        <input type="date" class="form-control" placeholder="Enter start date" aria-label="start date"
-                            aria-describedby="basic-addon1" required>
+                        <input type="date" class="form-control" name="start_date" id="start_date"
+                            placeholder="Enter start date" aria-label="start date" aria-describedby="basic-addon1"
+                            required>
                     </div>
                     <!-- Planning horizon -->
                     <div class="input-group mb-3 col-sm-6">
@@ -68,7 +70,7 @@
                             <span class="input-group-text">Planning horizon: </span>
                         </div>
                         <input type="number" class="form-control required" id="horizon" name="horizon" required
-                            placeholder="Type a number greater than 0" aria-label="Planning horizo" value="{{Horizon}}"
+                            placeholder="Type a number greater than 0" aria-label="Planning horizo" value="{{horizon}}"
                             aria-describedby="basic-addon1">
                         <div class="input-group-append">
                             <span class="input-group-text">Weeks</span>
